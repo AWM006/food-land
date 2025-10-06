@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--v1.1-->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODS</title>
+    <link rel="stylesheet" href="files/style/style.css">
+    <link rel="stylesheet" href="files/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+<body>
+        <div class="title">
+            <div class="logo-div"><img src="files/photos/logo.png" class="logo"></div>
+            <div class="abco">
+             <a href="files/inner.html" class="about">LOGIN</a>
+             <a href="#" class="contact">SIGNUP</a>
+            </div>
+            <div class="cart">
+                <img src="files/photos/cart.jpg" class="cart-img">
+                <a class="count">0</a>
+            </div>
+        </div>
+    <!--cart open div-->
+<div class="cart-div">
+    <div class="cart-title">YOUR CART</div>
+    <div>FREE DELIVERY ON ORDERING MORE THAN 250 RUPPESS</div>
+    <br>
+
+<div class="cart-item-listing"> 
+</div>
+    
+
+    <div class="closeandtotal">
+        <div class="total" onclick="confirmOrder()">ORDER<div class="total1" style="border: none;">0</div></div>
+        <div class="close">close</div>
+    </div>
+</div>
+<!--change menu-->
+<div class="section">
+    <button class="morning" onclick="daylist()">VIEW MORNING ITEMS</button>
+    <button class="evening" onclick="nightlist()">VIEW EVENING ITEMS</button>
+    <button class="combo" onclick="combolist()"> VIEW COMBO ITEMS</button>
+</div>
+
+
+
+    <!--item add div-->
+
+<div class="container-fluid" id="main-container">
+  <div class="row h-100" id="addItem">
+    <div class="col-8"></div>
+    
+  </div>
+</div>
+
+
+<div class="go-to-cart-popup" id="goToCartPopup">
+    <p>Item added to cart!</p>
+    <button class="carting">Go to Cart</button>
+  </div>
+
+<script src="files/script/script.js" defer></script>
+<script src="files/script/try.js"></script>
+<script src="files/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

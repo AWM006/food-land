@@ -1,0 +1,50 @@
+[
+    {
+        "id":   1,
+        "name": "CHOLE BHATURE",
+        "src":  "files/images/items/chole_bhature.jpg",
+        "price": 20
+    },
+    {
+        "id":   2,
+        "name": "LACCHA PAROTHA/Pcs",
+        "src":  "files/images/items/laccha.jpg",
+        "price": 20
+    },
+    {
+        "id":   3,
+        "name": "MURI GHUGNI",
+        "src":  "files/images/items/muri.jpg",
+        "price": 15
+    },
+    {
+        "id":   4,
+        "name": "OMLETE",
+        "src":  "files/images/items/omlette.jpg",
+        "price": 12
+    },
+    {
+        "id":   5,
+        "name": "SMALL LASSI",
+        "src":  "files/images/items/small-lassi.jpg",
+        "price": 10
+    },
+    {
+        "id":   6,
+        "name": "MEGA LASSI",
+        "src":  "files/images/items/mega-lassi.jpg",
+        "price": 20
+    },
+    {
+        "id":   7,
+        "name": "Mango LASSI",
+        "src":  "files/images/items/mango-lassi.jpg",
+        "price": 30
+    },
+    {
+        "id":   8,
+        "name": "COLD COFFEE",
+        "src":  "files/images/items/cold-coffee.jpg",
+        "price": 35
+    }
+]

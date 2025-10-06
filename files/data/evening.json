@@ -1,0 +1,140 @@
+[
+    {
+        "id":   101,
+        "name": "CHICKEN MOMO",
+        "src":  "files/images/items/momo.jpg",
+        "price": 60
+    },
+    {
+        "id":   102,
+        "name": "CHICKEN FRIED MOMO",
+        "src":  "files/images/items/fry_momo.jpg",
+        "price": 70
+    },
+    {
+        "id":   103,
+        "name": "CHICKEN PAN FRIED MOMO",
+        "src":  "files/images/items/pan_fry_momo.jpg",
+        "price": 80
+    },
+    {
+        "id":   104,
+        "name": "EGG ROLL",
+        "src":  "files/images/items/egg_roll.jpg",
+        "price": 35
+    },
+    {
+        "id":   105,
+        "name": "CHICKEN ROLL",
+        "src":  "files/images/items/chicken_roll.jpg",
+        "price": 45
+    },
+    {
+        "id":   106,
+        "name": "EGG CHICKEN ROLL",
+        "src":  "files/images/items/egg_chicken-roll.jpg",
+        "price": 55
+    },
+    {
+        "id":   107,
+        "name": "MOGLAI",
+        "src":  "files/images/items/moglai.jpg",
+        "price": 50
+    },
+    {
+        "id":   108,
+        "name": "CHICKEN MOGLAI",
+        "src":  "files/images/items/chicken_moglai.jpg",
+        "price": 70
+    },
+    {
+        "id":   109,
+        "name": "VEG CHOWMIN",
+        "src":  "files/images/items/veg_chowmin.jpg",
+        "price": 45
+    },
+    {
+        "id":   110,
+        "name": "EGG CHOWMIN",
+        "src":  "files/images/items/egg_chowmin.jpg",
+        "price": 50
+    },
+    {
+        "id":   111,
+        "name": "CHICKEN CHOWMIN",
+        "src":  "files/images/items/chicken_chowmin.jpg",
+        "price": 60
+    },
+    {
+        "id":   112,
+        "name": "EGG CHICKEN CHOWMIN",
+        "src":  "files/images/items/egg_chicken_chowmin.jpg",
+        "price": 70
+    },
+    {
+        "id":   113,
+        "name": "MIX CHOWMIN",
+        "src":  "files/images/items/mix_chowmin.jpg",
+        "price": 99
+    },
+    {
+        "id":   114,
+        "name": "VEG PASTA",
+        "src":  "files/images/items/veg_pasta.jpg",
+        "price": 50
+    },
+    {
+        "id":   115,
+        "name": "EGG PASTA",
+        "src":  "files/images/items/egg_pasta.jpg",
+        "price": 60
+    },
+    {
+        "id":   116,
+        "name": "CHICKEN PASTA",
+        "src":  "files/images/items/chicken_pasta.jpg",
+        "price": 70
+    },
+    {
+        "id":   117,
+        "name": "EGG CHICKEN PASTA",
+        "src":  "files/images/items/egg_chicken_pasta.jpg",
+        "price": 80
+    },
+    {
+        "id":   118,
+        "name": "MIX PASTA",
+        "src":  "files/images/items/mix_pasta.jpg",
+        "price": 110
+    },
+    {
+        "id":   119,
+        "name": "OIL FRY CHICKEN",
+        "src":  "files/images/items/oli_fry_chicken.jpg",
+        "price": 50
+    },
+    {
+        "id":   120,
+        "name": "CHICHEN SAATE",
+        "src":  "files/images/items/chicken_saate.jpg",
+        "price": 30
+    },
+    {
+        "id":   121,
+        "name": "DRY CHICKEN",
+        "src":  "files/images/items/dry_chicken.jpg",
+        "price": 30
+    },
+    {
+        "id":   122,
+        "name": "CHICKEN PAKODA",
+        "src":  "files/images/items/chicken_pakoda.jpg",
+        "price": 15
+    },
+    {
+        "id":   123,
+        "name": "CHICKEN WINGS FRY",
+        "src":  "files/images/items/chicken_wings_fry.jpg",
+        "price": 90
+    }
+]

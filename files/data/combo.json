@@ -1,0 +1,30 @@
+[
+    {
+        "id": 201,
+        "name": "LACCHA PAROTHA AND CHICKEN KOSHA",
+        "src": "files/photos/cart.jpg",
+        "price": 90,
+        "items":{
+                "1": "LACCHA",
+                "2": "CHICKEN KOSHA"  
+        },
+        "item_src":{
+                "1": "files/images/items/laccha.jpg",
+                "2": "files/photos/dustbin.png"
+        }
+    },
+    {
+        "id": 202,
+        "name": "LACCHA PAROTHA AND CHICKEN KOSHA",
+        "src": "files/photos/cart.jpg",
+        "price": 90,
+        "items":{
+                "1": "juice",
+                "2": "CHICKEN kabab"  
+        },
+        "item_src":{
+                "1": "files/images/items/laccha.jpg",
+                "2": "files/photos/items/icon.jpeg"
+        }
+    }
+]
