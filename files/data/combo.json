@@ -10,7 +10,7 @@
         },
         "item_src":{
                 "1": "files/images/items/laccha.jpg",
-                "2": "files/photos/dustbin.png"
+                "2": "files/images/items/chicken-kosha.jpg"
         }
     },
     {
@@ -24,7 +24,7 @@
         },
         "item_src":{
                 "1": "files/images/items/laccha.jpg",
-                "2": "files/photos/items/icon.jpeg"
+                "2": "files/images/items/chicken-kebab.jpg"
         }
     }
 ]
