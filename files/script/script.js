@@ -1,10 +1,12 @@
-let cartImage = document.querySelector(".cart-img");
+console.log("script.js is loaded");
+
+let cartImage = document.querySelector("#cart-img");
 let cartAdd = document.querySelector(".carting");
 let mainCart = document.querySelector(".cart-div");
 let open = false;
 let close = document.querySelector(".close");
 let cartItem = document.querySelector(".cart-item-listing");
-let count = document.querySelector(".count"); 
+let count = document.querySelector("#count"); 
 let countNo = parseInt(count.innerText);
 let existORnot = {};
 let i;

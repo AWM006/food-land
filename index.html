@@ -7,21 +7,40 @@
     <link rel="stylesheet" href="files/bootstrap-5.3.8-dist/css/bootstrap.min.css">
 </head>
 <body>
-        <div class="title">
-            <div class="logo-div"><img src="files/photos/logo.png" class="logo"></div>
-            <div class="abco">
-             <a href="files/inner.html" class="about">LOGIN</a>
-             <a href="#" class="contact">SIGNUP</a>
-            </div>
-            <div class="cart">
-                <img src="files/photos/cart.jpg" class="cart-img">
-                <a class="count">0</a>
-            </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <!-- Brand Name -->
+          <a class="navbar-brand fw-bold">Food <span style="color: brown;">Land</span></a>
+        
+          <!-- Search Bar 
+          <form class="d-flex flex-grow-1 mx-2">
+            <input class="form-control me-2" type="search" placeholder="Search Food Land" aria-label="Search">
+            <button class="btn btn-warning" type="submit"><i class="bi bi-search"></i></button>
+          </form>
+          -->
+          <!-- Right Side -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#"><strong>Account & Lists</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#"><strong>Orders</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white d-flex align-items-center" id="cart-img" href="#">
+                <i class="bi bi-cart-fill fs-4"></i>
+                <span class="ms-1"><strong>Cart</strong></span>
+                 <span class="badge ms-2" id="count" style="background-color: brown; color: white;">0</span>
+              </a>
+            </li>
+          </ul>
         </div>
+    </nav>
+    
     <!--cart open div-->
 <div class="cart-div">
     <div class="cart-title">YOUR CART</div>
-    <div>FREE DELIVERY ON ORDERING MORE THAN 250 RUPPESS</div>
     <br>
 
 <div class="cart-item-listing"> 

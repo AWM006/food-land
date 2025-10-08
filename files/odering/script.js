@@ -3,9 +3,9 @@ let nightProduct = [];
 let comboProduct = [];
 let items = {} ;
 let listProduct =[];
-let cart = document.querySelector(".items-lister");
+let cart = document.querySelector("#items-lister");
 let total_calc = parseInt(0);
-let total_price = document.querySelector(".total-price");
+let total_price = document.querySelector("#total-price");
 let url = `https://wa.me/+917468804974/?text=`;
 
 //code for get items from webadress
@@ -32,22 +32,27 @@ let productlist = async()=>{
         if (id >= 1 && id <= 100){listProduct = dayProduct;} else if (id >= 101 && id <= 200){listProduct = nightProduct;} else if (id >= 201 && id <= 300){listProduct = comboProduct;}
         let result = listProduct.find(item => item.id === id);
         let quantity = items[no]; // Use original string key
+
         cart.insertAdjacentHTML("beforeend", ` 
-            <div class="items" style="background-color:${bgColor};">
-                <div style="background-image: url(../../${result.src});"></div>
-                <a>${result.name}</a>
-                <a class="quan">${quantity}</a>
-                <a>${result.price}</a>
-                <a>${result.price * quantity}</a>
+
+            <div class="col-2">
+                <img src="../../${result.src}" alt="Product 1" class="img-fluid">
             </div>
+            <div class="col-3">${result.name}</div>
+                <div class="col-2">
+                    <input type="number" class="form-control" value="${quantity}" min="1">
+                </div>
+                <div class="col-2">₹${result.price}</div>
+                <div class="col-3">₹${result.price * quantity}</div>
+            </div>
+
         `);
-        // Toggle background color
-        bgColor = (bgColor === "#5a5156") ? "#978d93" : "#5a5156";
+
         total_calc += result.price * quantity;
         url += result.name+" x"+quantity+"%0a";
         
     }
-    total_price.innerText = total_calc;
+    total_price.innerText = "₹"+total_calc;
     url += `%0aTOTAL ${total_calc}`
 }
 productlist();
