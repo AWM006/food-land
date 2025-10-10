@@ -1,20 +1,4 @@
-<?php
-  include("./files/php/connection.php");
-  session_start();
 
-  //getting url address
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'|| $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-    $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    $url_last = substr($url , -2);
-
-
-  if(!isset($_SESSION['id']) && $url_last == "d/"){
-   header('location:./?totalitem=0');
-  }
-  elseif(isset($_SESSION['id']) && $url_last == "d/"){
-    header('location:./files/php/cart_conn.php');
-  }
-?>
 <!DOCTYPE html>
 <!--v1.3-->
 <head>
@@ -39,20 +23,7 @@
           <!-- Right Side -->
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-
-
-              <?php
-                if(isset($_SESSION['id'])){
-                  $query = "SELECT * FROM people WHERE session_id='{$_SESSION['id']}'";
-                  $result = mysqli_query($connection, $query);
-                  $data = mysqli_fetch_assoc($result);
-              ?>
-              <a class="nav-link text-white" href="#"><strong>hi <?php echo  "{$data['FirstName']}"; ?></strong></a>
-              <?php }
-              else{
-              ?>
               <a class="nav-link text-white" href="./files/signup/"><strong>Account</strong></a>
-              <?php } ?>
 
 
             </li>

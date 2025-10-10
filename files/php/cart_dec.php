@@ -34,7 +34,7 @@ if(isset($_SESSION['id']) ){
         $params[] = "id$total_type=$food_id&quan$total_type=$qty";
         $total_type = $total_type + 1;
     }
-    $url .=  "totalitem=".$total_type."&";
+    $url .=  "cart=open&totalitem=".$total_type."&";
     $url .= implode("&", $params);
 
     echo $url;
@@ -85,8 +85,8 @@ else{
     }
 
     $newQuery = http_build_query($newParams);
-    $newUrl   = strtok($url, '?') . '?' . $newQuery;
-
+    $newUrl   = strtok($url, '?') . '?cart=open&' . $newQuery;
+    echo $newUrl;
     header("location: $newUrl"); 
     }
 
