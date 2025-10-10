@@ -25,14 +25,15 @@
       <div class="col-lg-8">
         <div class="card-body py-5 px-md-5">
 
-          <form>
+          <form action="#" method="post">
+            <p class='text-center fw-bold text-danger fs-3' id="error">error cant't find account</p>
             <div data-mdb-input-init class="form-outline mb-4">
-              <input required type="number" id="form2Example1" class="form-control" style="border: 1px solid black;" />
+              <input required type="number" id="form2Example1" class="form-control" name="phone" style="border: 1px solid black;" />
               <label class="form-label" for="form2Example1">Phone Number</Nav></label>
             </div>
 
             <div data-mdb-input-init class="form-outline mb-4">
-              <input required type="password" id="form2Example2" class="form-control" style="border: 1px solid black;"/>
+              <input required type="password" id="form2Example2" class="form-control" name="password" style="border: 1px solid black;"/>
               <label class="form-label" for="form2Example2">Password</label>
             </div>
 
@@ -41,8 +42,9 @@
                 <a href="#!">Forgot password?</a>
               </div>
             </div>
-            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
-
+            <input type="submit" name="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" />
+            <br>
+            <span>Didn't have account?</span><a href="../signup/">click here</a>
           </form>
 
         </div>
@@ -52,6 +54,40 @@
 </section>
 
 
-    <script src="../bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+<script src="../bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+
+ <?php
+      function ohshit(){
+        echo "<script> document.querySelector('#error').style.visibility = 'visible'; </script>";
+      }
+  ?>
+
 </body>
 </html>
+
+<?php
+  session_start();
+  include("../php/connection.php");
+
+  if(isset($_POST['submit'])){
+
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM people WHERE phone='$phone' AND password='$password'";
+
+    $result = mysqli_query($connection, $query);
+
+    $data = mysqli_fetch_assoc($result);
+    //echo  $data['FirstName'];
+
+      if(mysqli_num_rows($result) > 0){
+        $_SESSION['id']="$data[session_id]";
+        header('location:../php/cart_conn.php');
+      }
+      else{
+        ohShit();
+      }
+
+}
+?>

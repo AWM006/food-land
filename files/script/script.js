@@ -1,19 +1,14 @@
 console.log("script.js is loaded");
-
 let cartImage = document.querySelector("#cart-img");
 let cartAdd = document.querySelector(".carting");
 let mainCart = document.querySelector(".cart-div");
 let open = false;
 let close = document.querySelector(".close");
-let cartItem = document.querySelector(".cart-item-listing");
 let count = document.querySelector("#count"); 
 let countNo = parseInt(count.innerText);
-let existORnot = {};
 let i;
 let decrease = document.querySelector(".decrease");
 let increase = document.querySelector(".increase");
-let totalBill = document.querySelector(".total1");
-let totalBillno = parseInt(totalBill.innerText);
 let listProductHTML = document.querySelector('#addItem');
 let mainItemAdder = document.querySelector('#main-container');
 let dayProduct = [];
@@ -29,7 +24,6 @@ let d = new Date();
 
 
 
-//add my food function
 
 addMYfood = (timing) => {
   listProductHTML.innerHTML = ''; // clear product list first
@@ -38,6 +32,7 @@ addMYfood = (timing) => {
 
     timing.forEach(product => {
       listProductHTML.insertAdjacentHTML('beforeend', `
+
         <div class="col-sm-6 col-md-4">
           <div class="card h-100">
             <div class="card-img-top" 
@@ -49,14 +44,15 @@ addMYfood = (timing) => {
             <div class="card-body text-center">
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">₹${product.price}</p>
-              <button class="btn w-100" 
-                      style="background-color: brown; color: white;" 
-                      onclick="addtoCart(${product.id}); popup();">
-                Add to Cart
-              </button>
+              <form action="./files/php/cart_conn.php" method="post">
+                <input type="number" value="${product.id}" name="prod_id" hidden/>
+                <input type="text" value="${window.location.href}" name="url" hidden/>
+                <button type="submit" name="submit" class="btn w-100" style="background-color: brown; color: white;" onclick="addtoCart(${product.id}); popup();">Cart</button>
+              </form>
             </div>
           </div>
         </div>
+
       `);
     });
   }
@@ -85,7 +81,11 @@ addMyCombo = () =>{
                                         ${photoHTML}
                                     </div>
                                     <div class="combo-caring">
-                                        <button class="addCart" onclick="addtoCart(${product.id}); popup();">CART</button>
+                                        <form action="./files/php/cart_conn.php" id="cartForm" method="post">
+                                            <input type="number" value="${product.id}" name="prod_id" hidden/>
+                                            <input type="text" value="${window.location.href}" name="url" hidden/>
+                                            <button type="submit" name="submit" class="addCart" onclick="addtoCart(${product.id}); popup();">Cart</button>
+                                        </form>
                                     </div>
                             </div>
                             <div class="combo-set">
@@ -174,37 +174,7 @@ close.addEventListener('click',()=>{
     open = false;
 })
 
-window.addtoCart = (a)=>{
-    if(a>=1 && a<=100) {listProduct = dayProduct} else if(a>=101 && a<=200){listProduct = nightProduct} else if(a>=201 && a<=300){ listProduct = comboProduct}
-    result =  listProduct.find(item => item.id === a);
-    countNo = countNo + 1;
-    count.innerText = countNo;
-    if(existORnot[a]){
-        document.querySelector(".total-item"+a).innerText = parseInt(document.querySelector(".total-item"+a).innerText) + 1;
-        document.querySelector(".total-bill"+a).innerText = parseInt( document.querySelector(".total-bill"+a).innerText) + parseInt(result.price);
-        totalBill.innerText = parseInt(totalBill.innerText) + parseInt(result.price);
-        existORnot[a] += 1 ;
-        
-        return;
-    }
-     existORnot[a] = 1;
-    cartItem.insertAdjacentHTML('beforeend', `
-        <div id="${a}" style="margin-bottom:10px">
-            <div class="cart-items">
-                <img src="${result.src}" class="cartimage">
-                <div class="cart-desciption">
-                <p>${result.name}</p>
-            </div>
-        </div>
-        <div class="inde">
-            <button class="decrease" onclick="low(${a})"><</button>
-            <a class="total-item${a}">1</a>
-            <button class="increase" onclick="addtoCart(${a})">></button>
-            <a class="total-bill${a} style="text-decoration= none;">${result.price}</a>
-        </div>
-    `) 
-    totalBill.innerText = parseInt(totalBill.innerText) + parseInt(result.price);
-}
+
 let popup = () =>
 {   if(open == false){
         //for pop up window
@@ -257,3 +227,7 @@ window.confirmOrder = () => {
         window.location.href = summary;
 }
 }                
+
+
+
+

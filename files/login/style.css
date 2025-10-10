@@ -17,3 +17,6 @@
         border-bottom-left-radius: 0.5rem;
       }
 }
+#error{
+  visibility: hidden;
+}

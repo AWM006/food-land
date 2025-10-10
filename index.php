@@ -1,5 +1,22 @@
+<?php
+  include("./files/php/connection.php");
+  session_start();
+
+  //getting url address
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'|| $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+    $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $url_last = substr($url , -2);
+
+
+  if(!isset($_SESSION['id']) && $url_last == "d/"){
+   header('location:./?totalitem=0');
+  }
+  elseif(isset($_SESSION['id']) && $url_last == "d/"){
+    header('location:./files/php/cart_conn.php');
+  }
+?>
 <!DOCTYPE html>
-<!--v1.1-->
+<!--v1.3-->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOODS</title>
@@ -22,7 +39,22 @@
           <!-- Right Side -->
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link text-white" href="#"><strong>Account & Lists</strong></a>
+
+
+              <?php
+                if(isset($_SESSION['id'])){
+                  $query = "SELECT * FROM people WHERE session_id='{$_SESSION['id']}'";
+                  $result = mysqli_query($connection, $query);
+                  $data = mysqli_fetch_assoc($result);
+              ?>
+              <a class="nav-link text-white" href="#"><strong>hi <?php echo  "{$data['FirstName']}"; ?></strong></a>
+              <?php }
+              else{
+              ?>
+              <a class="nav-link text-white" href="./files/signup/"><strong>Account</strong></a>
+              <?php } ?>
+
+
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#"><strong>Orders</strong></a>
@@ -63,10 +95,31 @@
 
     <!--item add div-->
 
+
 <div class="container-fluid" id="main-container">
   <div class="row h-100" id="addItem">
-    <div class="col-8"></div>
     
+         <!--       
+        <div class="col-sm-6 col-md-4" name="dummy">
+          <div class="card h-100">
+            <div class="card-img-top" 
+                 style="background-image:url('./files/photos/items/rgrg.jpeg'); 
+                        background-size: cover; 
+                        background-position: center; 
+                        height: 200px;">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">dummy</h5>
+              <p class="card-text">₹43434</p>
+              <form action="./files/php/cart_conn.php" method="post">
+                <input type="number" value="101" name="prod_id" hidden/>
+                <input type="submit" name="submit" class="btn w-100" style="background-color: brown; color: white;" onclick=" addtoCart(100); popup();" value="Add to Cart" />
+              </form>
+            </div>
+          </div>
+        </div>
+      -->
+
   </div>
 </div>
 
@@ -76,8 +129,13 @@
     <button class="carting">Go to Cart</button>
   </div>
 
-<script src="files/script/script.js" defer></script>
-<script src="files/script/try.js"></script>
-<script src="files/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+  <script src="files/script/script.js"></script>
+  <script src="files/script/cart.js"></script>
+  <script src="files/script/open.js"></script>
+  <script src="files/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+  <script>
+ 
+  </script>
+
 </body>
 </html>
